@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🌇 Roda Senja
+# 🌇 OOP-KENDARAAN
 
 **Simulasi kendaraan berbasis OOP: satu perintah, banyak perilaku.**
 
@@ -33,7 +33,7 @@
 
 ## 🌆 Tentang Proyek
 
-**Roda Senja** adalah program Java sederhana yang mensimulasikan beberapa jenis kendaraan, yaitu **Motor**, **Mobil**, dan **Truk**. Setiap kendaraan bisa:
+**OOP-KENDARAAN** adalah program Java sederhana yang mensimulasikan beberapa jenis kendaraan, yaitu **Motor**, **Mobil**, dan **Truk**. Setiap kendaraan bisa:
 
 - 🚦 **berjalan** dengan gaya masing-masing, dan
 - 💸 **menghitung biaya bensin** untuk jarak tertentu dengan tarif yang berbeda.
@@ -112,7 +112,7 @@ classDiagram
 ## 📂 Struktur Proyek
 
 ```
-roda-senja/
+OOP-KENDARAAN/
 ├── 📄 README.md
 └── 📁 src/
     ├── ☕ Kendaraan.java        # abstract class (induk)
