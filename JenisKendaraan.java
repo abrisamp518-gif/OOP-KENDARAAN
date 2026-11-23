@@ -12,7 +12,9 @@ class Motor extends Kendaraan {
         return jarakKm * 400;
     }
 }
-class Mobil extends Kendaraan {
+
+// [BARU] Mobil sekarang juga meng-implement interface Bermuatan
+class Mobil extends Kendaraan implements Bermuatan {
     public Mobil(String nama) {
         super(nama, 4);
     }
@@ -24,19 +26,48 @@ class Mobil extends Kendaraan {
     public double biayaPerjalanan(double jarakKm) {
         return jarakKm * 1200;
     }
+    @Override // [BARU] isi method dari interface Bermuatan
+    public double kapasitasKg() {
+        return 500;
+    }
 }
+
 class Truk extends Mobil {
     public Truk(String nama) {
         super(nama);
         this.jumlahRoda = 6; // roda truk lebih banyak
     }
     @Override
-     public void jalan() {
+    public void jalan() {
         super.jalan(); // memanggil jalan() milik Mobil dulu
         System.out.println("   ...sambil mengangkut muatan berat.");
     }
     @Override // truk lebih boros: 2x lipat biaya mobil
     public double biayaPerjalanan(double jarakKm) {
         return super.biayaPerjalanan(jarakKm) * 2;
+    }
+    @Override // [BARU] truk mengangkut jauh lebih banyak
+    public double kapasitasKg() {
+        return 5000;
+    }
+}
+
+// [BARU] INHERITANCE bertingkat: Bus mewarisi Mobil (Mobil -> Bus)
+class Bus extends Mobil {
+    public Bus(String nama) {
+        super(nama);
+        this.jumlahRoda = 6;
+    }
+    @Override
+    public void jalan() {
+        System.out.println(nama + " melaju membawa banyak penumpang.");
+    }
+    @Override // bus: 1,5x biaya mobil
+    public double biayaPerjalanan(double jarakKm) {
+        return super.biayaPerjalanan(jarakKm) * 1.5;
+    }
+    @Override // kapasitas bagasi bus
+    public double kapasitasKg() {
+        return 1000;
     }
 }
